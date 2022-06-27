@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{06E15577-A916-4459-A263-161D9582B5E5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CheckersGui</RootNamespace>
+    <AssemblyName>CheckersGui</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="ButtonBoardSquare.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FormCheckers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGameSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGameSettings.Designer.cs">
+      <DependentUpon>FormGameSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormGameSettings.resx">
+      <DependentUpon>FormGameSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Black-Block.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlackCheckerKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BlackCheckerPiece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue-Block.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hro.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\White-Block.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteCheckerKing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhiteCheckerPiece.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckerPieceJump.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckerPieceStep.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameOverLose.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GameOverWin.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CheckersLogic\CheckersLogic.csproj">
+      <Project>{d74bccf3-1e37-4bf7-a2b2-c970ace182a9}</Project>
+      <Name>CheckersLogic</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
