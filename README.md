@@ -4,7 +4,7 @@ Checkers Windows Application
 <img src="https://user-images.githubusercontent.com/72739568/175908237-c747c87d-de2f-472a-995d-a7ccd7cc69f3.png" alt="drawing" width="300"/>
 
 ## About :book:
-This project is an english "Damka" game for windows
+This project is an english "Damka" game
 
 - The software allows two players to play against each other, and allows to play against the computer
 - The player can choose to play on diffrent board sizes
@@ -27,6 +27,12 @@ The function gives specific value of row to heuristic:
 
 - Pawn’s value: 5 + row number (As long as the piece close to the end of the board it worth more)
 - King’s value = 5 + number of rows in the board + 2
+
+## Tools used for development :wrench:
+- .NET Framework
+- C#
+- Microsoft Visual Studio
+
 
 ## Design :paintbrush:
 - As the real physical game, we designed the game with a theme of Classic Wood
