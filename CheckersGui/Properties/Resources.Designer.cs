@@ -159,6 +159,16 @@ namespace CheckersGui.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap PossibleMove {
+            get {
+                object obj = ResourceManager.GetObject("PossibleMove", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap White_Block {
             get {
                 object obj = ResourceManager.GetObject("White_Block", resourceCulture);
