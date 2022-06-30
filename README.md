@@ -29,7 +29,7 @@ The function gives specific value of row to heuristic:
 - King’s value = 5 + number of rows in the board + 2
 
 ## Tools used for development :wrench:
-- .NET Framework
+- .NET WinForms
 - C#
 - Microsoft Visual Studio
 
