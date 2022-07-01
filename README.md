@@ -16,7 +16,7 @@ This project is an english "Damka" game
 - The software allows two players to play against each other, and allows to play against the computer
 - The player can choose to play on diffrent board sizes
 
-## Game rules :checkered_flag:
+## Game Rules :checkered_flag:
 - If a piece can capture another, it must
 - No backwards captures allowed by regular pieces
 - When a piece reaches the end it becomes a queen
@@ -34,7 +34,7 @@ The function gives specific value of row to heuristic:
 - Pawn’s value: 5 + row number (As long as the piece close to the end of the board it worth more)
 - King’s value = 5 + number of rows in the board + 2
 
-## Tools used for development :wrench:
+## Tools Used for Development :wrench:
 - .NET WinForms
 - C#
 - Microsoft Visual Studio
@@ -47,7 +47,7 @@ The function gives specific value of row to heuristic:
 - During a turn of a player his name design will be bolded & underlined so he can see it easily
 - we created sounds to improve the user experience – each step the user can hear a sound of a piece sliding, and each capture the user can hear a capture sound. In the end of the game the user can hear a cool sound according to his result (winning or losing)
 
-## Team members :man_office_worker::man_office_worker:
+## Team Members :man_office_worker::man_office_worker:
 - Leead Arbetman
 - Tomer Ahimeir
 
