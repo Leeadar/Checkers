@@ -3,18 +3,24 @@ Checkers Windows Application
 
 <img src="https://user-images.githubusercontent.com/72739568/175908237-c747c87d-de2f-472a-995d-a7ccd7cc69f3.png" alt="drawing" width="300"/>
 
-## About :book:
-This project is an english "Damka" game
-
-- The software allows two players to play against each other, and allows to play against the computer
-- The player can choose to play on diffrent board sizes
-
 ## Getting Started :confetti_ball:
 Install Microsoft Visual Studio - https://visualstudio.microsoft.com/downloads/
 
 Tutorial on how to open a project from a GitHub repo - https://docs.microsoft.com/en-us/visualstudio/get-started/tutorial-open-project-from-repo?view=vs-2022
 
 Make sure you set CheckersGui as start up project, and press F5 to run the application
+
+## About :book:
+This project is an english "Damka" game
+
+- The software allows two players to play against each other, and allows to play against the computer
+- The player can choose to play on diffrent board sizes
+
+## Game rules :checkered_flag:
+- If a piece can capture another, it must
+- No backwards captures allowed by regular pieces
+- When a piece reaches the end it becomes a queen
+- A queen may capture backwards
 
 ## AI Implementation :computer:
 We implemented a class to choose a move for the computer, using the **MiniMax** algorithm
