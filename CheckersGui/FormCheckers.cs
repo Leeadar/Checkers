@@ -212,7 +212,7 @@ namespace CheckersGui
             }
             else
             {
-                m_ButtonStartBoardSquare.BackgroundImage = global::CheckersGui.Properties.Resources.White_Block;
+                removeMarksFromBoardSquares();
                 if (r_GameManager.CheckIfMoveIsLegal(m_ButtonStartBoardSquare.BoardSquare, buttonBoardSquare.BoardSquare, out moveToExecute))
                 {
                     r_GameManager.ManageTurn(moveToExecute);
@@ -245,22 +245,54 @@ namespace CheckersGui
 
         public void ResetButtonBoardSquareMark()
         {
-            if (IsButtonBoardSquareMarks)
-            {
-                m_ButtonStartBoardSquare.BackgroundImage = global::CheckersGui.Properties.Resources.White_Block;
-            }
-
+            removeMarksFromBoardSquares();
             IsButtonBoardSquareMarks = false;
             m_ButtonStartBoardSquare = null;
         }
 
         private void markStartBoardSquare(ButtonBoardSquare i_StartButtonBoardSquare)
         {
+            List<Move> legalMovesFromBoardSquare = r_GameBoard.GetLegalMovesFromBoardSquare(i_StartButtonBoardSquare.BoardSquare, r_GameManager.PlayerTurnToPlay, r_GameManager.IsAnotherJumpIsPossible, r_GameManager.LastMove);
+
             if (i_StartButtonBoardSquare.BoardSquare.CheckerPiece != null && i_StartButtonBoardSquare.BoardSquare.CheckerPiece.PieceOwner == r_GameManager.PlayerTurnToPlay && r_GameManager.PlayerTurnToPlay.PlayerType == ePlayerType.Human)
             {
-                i_StartButtonBoardSquare.BackgroundImage = global::CheckersGui.Properties.Resources.Blue_Block;
-                m_ButtonStartBoardSquare = i_StartButtonBoardSquare;
-                IsButtonBoardSquareMarks = true;
+                if (legalMovesFromBoardSquare.Count > 0)
+                {
+                    i_StartButtonBoardSquare.BackgroundImage = global::CheckersGui.Properties.Resources.Blue_Block;
+                    markEndBoardSquares(legalMovesFromBoardSquare);
+                    m_ButtonStartBoardSquare = i_StartButtonBoardSquare;
+                    IsButtonBoardSquareMarks = true;
+                }
+            }
+        }
+
+        private void markEndBoardSquares(List<Move> legalMovesFromBoardSquare)
+        {
+            int row, col;
+
+            foreach (Move move in legalMovesFromBoardSquare)
+            {
+                row = move.EndBoardSquare.Row;
+                col = move.EndBoardSquare.Col;
+                m_ButtonBoardSquare[row, col].BackgroundImage = global::CheckersGui.Properties.Resources.PossibleMove;
+            }
+        }
+
+        private void removeMarksFromBoardSquares()
+        {
+            List<Move> legalMovesFromBoardSquare;
+            int row, col;
+
+            if (IsButtonBoardSquareMarks)
+            {
+                m_ButtonStartBoardSquare.BackgroundImage = global::CheckersGui.Properties.Resources.White_Block;
+                legalMovesFromBoardSquare = r_GameBoard.GetLegalMovesFromBoardSquare(m_ButtonStartBoardSquare.BoardSquare, r_GameManager.PlayerTurnToPlay, r_GameManager.IsAnotherJumpIsPossible, r_GameManager.LastMove);
+                foreach (Move move in legalMovesFromBoardSquare)
+                {
+                    row = move.EndBoardSquare.Row;
+                    col = move.EndBoardSquare.Col;
+                    m_ButtonBoardSquare[row, col].BackgroundImage = global::CheckersGui.Properties.Resources.White_Block;
+                }   
             }
         }
 
