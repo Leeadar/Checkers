@@ -49,7 +49,7 @@ The function gives specific value of row to heuristic:
 
 ## Team Members :man_office_worker::man_office_worker:
 - Leead Arbetman
-- Tomer Ahimeir
+- Tomer Ahimeir 
 
 ## Contributing
 #### For contributing please follow the instructions below:
